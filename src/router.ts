@@ -4,13 +4,18 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
+import { getHero } from "./models/homepage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         Component: App,
         children: [
-            { index: true, Component: Home },
+            { 
+                index: true,
+                Component: Home,
+                loader: () => getHero(),
+            },
             { path: "about", Component: About },
             { path: "contact", Component: Contact },
             { path: "*", Component: NotFound }
