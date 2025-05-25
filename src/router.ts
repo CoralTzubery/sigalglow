@@ -5,6 +5,7 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
 import { getHero } from "./models/homepage";
+import { aboutSections } from "./models/about";
 
 export const router = createBrowserRouter([
     {
@@ -14,7 +15,12 @@ export const router = createBrowserRouter([
             { 
                 index: true,
                 Component: Home,
-                loader: () => getHero(),
+                loader: () => {
+                    return {
+                        hero: getHero(),
+                        about: aboutSections,
+                    };
+                },
             },
             { path: "about", Component: About },
             { path: "contact", Component: Contact },
