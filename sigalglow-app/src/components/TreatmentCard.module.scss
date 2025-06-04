@@ -1,6 +1,4 @@
-// @use "../src/styles/theme.scss" as *;
-@use "sass:color";
-@import "./styles/theme.scss";
+@use "../styles/theme.scss" as *;
 
 .card {
     background-color: $color-background;
