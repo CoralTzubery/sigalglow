@@ -1,19 +1,28 @@
+@use "../src/styles/theme.scss" as *;
+
 .navContainer {
     position: sticky;
     top: 0;
+    background-color: $color-background;
+    z-index: 10;
+    border-bottom: 1px solid lighten($color-secondary, 30%);
 }
 
 .appNav {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    font-family: $font-family;
 
     a {
-        color: var(--primary-600);
+        color: $color-secondary;
+        font-size: $font-size-base;
+        text-decoration: none;
+        transition: color 0.2s ease;
 
         &:hover {
-            color: var(--primary-500);
+            color: lighten($color-secondary, 20%);
         }
     }
 }

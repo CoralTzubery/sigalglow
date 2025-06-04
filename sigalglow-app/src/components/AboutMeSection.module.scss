@@ -1,20 +1,23 @@
+@use "../styles/theme.scss" as *;
+
 .about {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    padding: 3rem 2rem;
-    background-color: #fff;
+    gap: $spacing-lg * 2;
+    padding: $spacing-lg $spacing-md;
+    background-color: $color-background;
+    font-family: $font-family;
 }
 
 .block {
-    background-color: #f9f9f9;
-    border-radius: 1rem;
-    padding: 2.5rem;
+    background-color: lighten($color-background, 3%);
+    border-radius: $spacing-md;
+    padding: clac($spacing-lg + 0.5rem);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     direction: rtl;
     text-align: right;
     line-height: 1.5;
-    font-size: 1.1rem;
+    font-size: $font-size-base;
     font-family: "Heebo", sans-serif;
     transition: transform 0.2s ease;
 
@@ -23,11 +26,11 @@
     }
 
     h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        color: #4a2d63;
-        border-bottom: 2px solid #e0d3f3;
-        padding-bottom: 0.5rem;
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-sm;
+        color: $color-secondary;
+        border-bottom: 2px solid lighten($color-secondary, 30%);
+        padding-bottom: $spacing-sm;
     }
 
     p {

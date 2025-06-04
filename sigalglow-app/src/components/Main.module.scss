@@ -1,7 +1,10 @@
+@use "../styles/theme.scss" as *;
+
 .root {
-    padding: 2rem;
+    padding: $spacing-lg;
     margin: auto;
     max-width: 1200px;
+    background-color: $color-background;
 
     &[data-large] {
         max-width: 1600px;

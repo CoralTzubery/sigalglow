@@ -1,6 +1,9 @@
+@use "../styles/theme.scss" as *;
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    padding: 3rem 2rem;
+    gap: $spacing-lg;
+    padding: $spacing-lg $spacing-md;
+    background-color: $color-background;
 }

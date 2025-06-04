@@ -1,20 +1,22 @@
+@use "../styles/theme.scss" as *;
+
 .card {
-    background-color: #fdfcfe;
-    border: 1px solid #ddd;
-    border-radius: 1rem;
-    padding: 1.5rem;
+    background-color: lighten($color-background, 2%);
+    border: 1px solid darken($color-background, 5%);
+    border-radius: $spacing-md;
+    padding: $spacing-md;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease-in-out;
 
     h2 {
-        color: #4a2d63;
-        font-size: 1.4rem;
-        margin-bottom: 0.8rem;
+        color: $color-secondary;
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-sm;
     }
     
     p {
-        font-size: 1rem;
-        color: #444;
+        font-size: $font-size-base;
+        color: $color-text;
         line-height: 1.5;
     }
 

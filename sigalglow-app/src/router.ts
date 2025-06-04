@@ -5,7 +5,7 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
 import { getHero } from "./models/homepage";
-import { Treatments } from "./pages/treatments";
+import { Treatments } from "./pages/Treatments";
 
 export const router = createBrowserRouter([
   {
