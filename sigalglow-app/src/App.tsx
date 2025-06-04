@@ -17,8 +17,9 @@ export function Nav() {
   return (
     <nav className={styles.navContainer}>
       <menu className={styles.appNav}>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/about">אודות</Link></li>
+        <li><Link to="/contact">יצירת קשר</Link></li>
+        <li><Link to="/treatments">טיפולים</Link></li>
       </menu>
     </nav>
   );

@@ -5,6 +5,7 @@ import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
 import { getHero } from "./models/homepage";
+import { Treatments } from "./pages/treatments";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
         path: "*",
         Component: NotFound,
       },
+      {
+        path: "treatments",
+        Component: Treatments,
+      }
     ],
   },
 ]);

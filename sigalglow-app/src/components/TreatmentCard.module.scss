@@ -1,0 +1,24 @@
+.card {
+    background-color: #fdfcfe;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease-in-out;
+
+    h2 {
+        color: #4a2d63;
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
