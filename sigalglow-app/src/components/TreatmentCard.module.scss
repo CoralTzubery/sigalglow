@@ -1,8 +1,10 @@
-@use "../styles/theme.scss" as *;
+// @use "../src/styles/theme.scss" as *;
+@use "sass:color";
+@import "./styles/theme.scss";
 
 .card {
-    background-color: lighten($color-background, 2%);
-    border: 1px solid darken($color-background, 5%);
+    background-color: $color-background;
+    border: 1px solid $color-background;
     border-radius: $spacing-md;
     padding: $spacing-md;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);

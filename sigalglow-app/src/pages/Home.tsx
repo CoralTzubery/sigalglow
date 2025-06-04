@@ -20,7 +20,7 @@ export function Home() {
             <Main>
                 <section className={styles.hero}>
                     <img src={hero.imageUrl} className={styles.cover} alt="" />
-                    <div className="{style.overlay">
+                    <div className={styles.overlay}>
                         <h1>{hero.title}</h1>
                         <p>{hero.subtitle}</p>
                     </div>
