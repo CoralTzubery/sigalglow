@@ -3,6 +3,7 @@ import type { HeroData } from "../models/homepage";
 import { AboutMeSection } from "../components/AboutMeSection";
 import type { AboutSection } from "../models/about";
 import { Main } from "../components/Main";
+import sigalglowPicture from "../assets/sigalglow-picture.jpg";
 
 import styles from "./Home.module.scss";
 
@@ -19,8 +20,8 @@ export function Home() {
         <>
             <Main>
                 <section className={styles.hero}>
-                    <img src={hero.imageUrl} className={styles.cover} alt="" />
-                    <div className={styles.overlay}>
+                    <img src={sigalglowPicture} className={styles.cover} alt="תמונת פתיחה" />
+                    <div className={styles.text}>
                         <h1>{hero.title}</h1>
                         <p>{hero.subtitle}</p>
                     </div>
