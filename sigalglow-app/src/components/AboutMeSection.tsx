@@ -13,7 +13,7 @@ export function AboutMeSection({ sections }: Props) {
                     <h2>{title}</h2>
                     <p>{content}</p>
                 </article>
-            ))};
+            ))}
         </section>
     );
 }
