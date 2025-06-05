@@ -5,7 +5,7 @@
     top: 0;
     background-color: $color-background;
     z-index: 10;
-    border-bottom: 1px solid lighten($color-secondary, 30%);
+    border-bottom: 1px solid $color-secondary;
 }
 
 .appNav {
@@ -22,7 +22,7 @@
         transition: color 0.2s ease;
 
         &:hover {
-            color: lighten($color-secondary, 20%);
+            color: $color-secondary, 20%;
         }
     }
 }
