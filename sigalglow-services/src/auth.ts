@@ -51,7 +51,7 @@ const login: RequestHandler = async (req, res) => {
         }
 
         const user = await User.findOne({ email }).select("+password");
-        
+
         if (!user || !user.isSamePassword(password)) {
             res.status(401).send("Invalid credentials");
             return;
