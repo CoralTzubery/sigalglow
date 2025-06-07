@@ -28,3 +28,17 @@
         }
     }
 }
+
+.logoutButton {
+    background: none;
+    border: none;
+    color: $color-accent;
+    cursor: pointer;
+    font-family: $font-family;
+    font-size: $font-size-base;
+    padding: 0;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }

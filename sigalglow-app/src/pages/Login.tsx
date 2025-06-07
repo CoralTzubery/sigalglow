@@ -3,14 +3,17 @@ import { apiClient, setToken } from "../models/apiClient";
 import { isAxiosError } from "axios";
 import { Link } from "react-router-dom";
 import { Main } from "../components/Main";
-
-import styles from "./Login.module.scss";
 import { Input } from "../components/Input";
 import { PasswordInput } from "../components/PasswordInput";
 import { PrimaryButton } from "../components/PrimaryButton";
 import { useState } from "react";
+import { useAuth } from "../context/useAuth";
+
+import styles from "./Login.module.scss";
+
 
 export function Login() {
+    const { setLoggedIn } = useAuth();
     const [loginError, setLoginError] = useState("");
     const navigate = useNavigate();
 
@@ -20,6 +23,7 @@ export function Login() {
             const res = await apiClient.post("/login", credentials);
             const { token } = res.data;
             setToken(token);
+            setLoggedIn(true);
             navigate("/");
         } catch (error) {
             if(!isAxiosError(error) || error.response?.status !==401) {

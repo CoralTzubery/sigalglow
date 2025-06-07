@@ -6,6 +6,9 @@ import { router } from './router';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+      <RouterProvider 
+        router={router}
+        fallbackElement={<p>טוען...</p>} 
+      />
   </StrictMode>,
 )

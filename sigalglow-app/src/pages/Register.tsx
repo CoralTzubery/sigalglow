@@ -2,15 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiClient, setToken } from "../models/apiClient";
 import { isAxiosError } from "axios";
-
-import styles from "./Register.module.scss";
 import { Link } from "react-router-dom";
 import { Main } from "../components/Main";
 import { Input } from "../components/Input";
 import { PrimaryButton } from "../components/PrimaryButton";
 import { PasswordInput } from "../components/PasswordInput";
 
+import styles from "./Register.module.scss";
+import { useAuth } from "../context/useAuth";
+
 export function Register() {
+    const { setLoggedIn } = useAuth();
     const [registerError, setRegisterError] = useState("");
     const navigate = useNavigate();
 
@@ -20,6 +22,7 @@ export function Register() {
             const res = await apiClient.post("/register", newUser);
             const { token } = res.data;
             setToken(token);
+            setLoggedIn(true);
             navigate("/");
         } catch (error) {
             if (!isAxiosError(error) || error.response?.status !== 409) {

@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { Document, model, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 export type UserRole = "client" | "admin";
 
@@ -20,13 +20,6 @@ const schema = new Schema({
         type: String,
         required: true,
         select: false,
-        // set(newPassword: string) {
-        //     if (!(this instanceof Document) || this.isNew) {
-        //         throw new Error();
-        //     }
-
-        //     return hashPasswordWithSalt(newPassword, this.get("createdAt"));
-        // },
     },
     fullName: {
         type: String,
@@ -51,6 +44,20 @@ const schema = new Schema({
         },
     }
 });
+
+schema.pre("save", function (next) {
+    const user = this as any;
+
+    if (!user.isModified("password")) return next();
+
+    if (!user.createdAt) {
+        user.createdAt = new Date();
+    }
+
+    user.password = hashPasswordWithSalt(user.password, user.createdAt);
+    next();
+});
+
 
 export const User = model("User", schema);
 
