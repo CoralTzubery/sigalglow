@@ -1,19 +1,24 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
+import { router as aboutRouter}  from "./routers/about.route";
+import { useAuth } from "./auth";
 
-import aboutRouter from "./routers/about.route";
-
-dotenv.config();
-
-const app = express();
+export const app = express();
 
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true,
 }));
 
-app.use(express.json());
-app.use("/api/about", aboutRouter);
+app.use((req, _, next) => {
+    console.log(new Date(), req.method, req.url);
+    next();
+});
 
-export default app;
+app.use(express.json());
+
+app.use(express.static("public"));
+
+useAuth(app);
+
+app.use("/api/about", aboutRouter);

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { About } from "../models/about.model";
 
-const router = Router();
+export const router = Router();
 
 router.get("/", async (_req, res) => {
     try {
@@ -23,5 +23,3 @@ router.post("/", async (req, res) => {
         res.status(500).json({ message: "Internal Server Error" }); 
     }
 });
-
-export default router;
