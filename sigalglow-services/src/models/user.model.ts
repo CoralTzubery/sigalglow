@@ -20,13 +20,13 @@ const schema = new Schema({
         type: String,
         required: true,
         select: false,
-        set(newPassword: string) {
-            if (!(this instanceof Document) || this.isNew) {
-                throw new Error();
-            }
+        // set(newPassword: string) {
+        //     if (!(this instanceof Document) || this.isNew) {
+        //         throw new Error();
+        //     }
 
-            return hashPasswordWithSalt(newPassword, this.get("createdAt"));
-        },
+        //     return hashPasswordWithSalt(newPassword, this.get("createdAt"));
+        // },
     },
     fullName: {
         type: String,

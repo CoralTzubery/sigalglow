@@ -40,7 +40,7 @@ export function Register() {
                 <form className={styles.form} action={register}>
                     <Input type="email" name="email" id="email" label="Email" required />
                     <Input  name="fullName" id="fullName" label="Full Name" required />
-                    <Input  name="phone" id="phone" label="Phone Number" />
+                    <Input  name="phoneNumber" id="phoneNumber" label="Phone Number" />
                     <SetPasswordField />
                     <PrimaryButton>Register</PrimaryButton>
                     {registerError && <p className={styles.errorMessage}>{registerError}</p>}
