@@ -7,6 +7,8 @@ import { NotFound } from "./pages/NotFound";
 import { getHero } from "./models/homepage";
 import { Treatments } from "./pages/Treatments";
 import { ErrorPage } from "./pages/ErrorPage";
+import { Register } from "./pages/Register";
+import { Login } from "./pages/Login";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ export const router = createBrowserRouter([
       {
         path: "treatments",
         Component: Treatments,
+      },
+      {
+        path: "register",
+        Component: Register,
+      },
+      {
+        path: "login",
+        Component: Login,
       },
       {
         path: "*",

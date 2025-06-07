@@ -1,0 +1,23 @@
+@use "../styles/theme.scss" as *;
+
+.button {
+    background-color: $color-accent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $font-size-base;
+    border-radius: $spacing-lg;
+    color: white;
+    padding: $spacing-sm $spacing-md;
+    transition: background-color 0.2s ease;
+    font-family: $font-family;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+
+    &:active {
+        background-color: $color-primary;
+    }
+}

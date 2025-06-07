@@ -20,6 +20,8 @@ export function Nav() {
         <li><Link to="/about">אודות</Link></li>
         <li><Link to="/contact">יצירת קשר</Link></li>
         <li><Link to="/treatments">טיפולים</Link></li>
+        <li><Link to="/login">התחברות</Link></li>
+        <li><Link to="/register">הרשמה</Link></li>
       </menu>
     </nav>
   );

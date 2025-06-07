@@ -1,0 +1,30 @@
+@use "../styles/theme.scss" as *;
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    label {
+        font-size: $font-size-base;
+        font-weight: bold;
+        color: $color-text;
+        font-family: $font-family;
+    }
+
+    input {
+        border: 1px solid $color-secondary;
+        border-radius: $spacing-sm;
+        padding: $spacing-sm;
+        font-family: $font-family;
+        font-size: $font-size-base;
+        color: $color-text;
+        background-color: $color-background;
+
+        &:focus {
+            outline: none;
+            border-color: $color-accent;
+            box-shadow:  0 0 0 2px rgba(175, 121, 129, 0.2);
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@use "../styles/theme.scss" as *;
+
+.nav {
+    text-align: center;
+    margin-block-start: -1.5em;
+    
+    a {
+        color: $color-accent;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: $font-family;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.errorMessage {
+    background-color: $color-secondary;
+    color: white;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $spacing-sm;
+    font-family: $font-family;
+    font-size: $font-size-base;
+}
