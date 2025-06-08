@@ -1,0 +1,20 @@
+@use "../styles//theme.scss" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.error {
+    background: $color-accent;
+    color: white;
+    padding: $spacing-sm;
+    border-radius: $spacing-md;
+}
+
+input[type="date"],
+input[type="time"] {
+  direction: ltr;
+  text-align: left;
+}
