@@ -9,6 +9,7 @@ import { Treatments } from "./pages/Treatments";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Register } from "./pages/Register";
 import { Login } from "./pages/Login";
+import { Appointments } from "./pages/Appointments";
 
 export const router = createBrowserRouter([
   {
@@ -46,6 +47,15 @@ export const router = createBrowserRouter([
       {
         path: "login",
         Component: Login,
+      },
+      {
+        path: "appointments",
+        Component: Appointments,
+        loader: async () => {
+          const response = await fetch("http://localhost:3000/api/appointments");
+          if (!response.ok) throw new Error("Cannot load appointments");
+          return await response.json();
+        },
       },
       {
         path: "*",
