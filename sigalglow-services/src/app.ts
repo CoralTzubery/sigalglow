@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
-import { router as aboutRouter}  from "./routers/about.route";
 import { useAuth } from "./auth";
+import { router as aboutRouter}  from "./routers/about.route";
+import { router as appointmentRouter } from "./routers/appointment.route";
 
 export const app = express();
 
@@ -22,3 +23,4 @@ app.use(express.static("public"));
 useAuth(app);
 
 app.use("/api/about", aboutRouter);
+app.use("/api/appointments", appointmentRouter);
