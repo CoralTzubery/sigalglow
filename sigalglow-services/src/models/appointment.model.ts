@@ -6,7 +6,6 @@ export type Appointment = {
     date: string;
     time: string;
     treatmentId: string;
-    userId: string;
 };
 
 const schema = new Schema<Appointment>({
@@ -27,10 +26,6 @@ const schema = new Schema<Appointment>({
         required: true,
     },
     treatmentId: {
-        type: String,
-        required: true,
-    },
-    userId: {
         type: String,
         required: true,
     },
