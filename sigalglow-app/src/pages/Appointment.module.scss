@@ -1,0 +1,70 @@
+@use "../styles/theme.scss" as *;
+
+.container {
+    background-color: $color-background;
+    padding: $spacing-lg;
+    font-family: $font-family;
+    color: $color-text;
+    min-height: 100vh;
+}
+
+.header {
+    margin-bottom: $spacing-lg;
+
+    h1 {
+        font-size: $font-size-xl;
+        color: $color-primary;
+        margin-bottom: $spacing-md;
+    }
+
+    p {
+        font-size: $font-size-base;
+        color: $color-secondary;
+    }
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: $spacing-md;
+}
+
+.appointmentList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: $spacing-md;
+}
+
+.appointmentCard {
+    background-color: $color-primary;
+    color: white;
+    padding: $spacing-md;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: $font-size-base;
+
+    p {
+        margin: 0 0 $spacing-sm 0;
+
+        strong {
+            color: $color-background;
+        }
+    }
+}
+
+.addButton {
+    background-color: $color-accent;
+    color: white;
+    border: none;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+    font-family: $font-family;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}
