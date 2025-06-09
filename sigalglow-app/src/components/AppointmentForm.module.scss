@@ -6,6 +6,23 @@
     gap: 1rem;
 }
 
+.label {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $color-text;
+  margin-block-start: $spacing-sm;
+}
+
+.select {
+  padding: $spacing-sm;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  border: 1px solid $color-secondary;
+  border-radius: 6px;
+  background-color: white;
+  color: $color-text;
+}
+
 .error {
     background: $color-accent;
     color: white;
