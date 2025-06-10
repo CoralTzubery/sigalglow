@@ -1,0 +1,25 @@
+@use "../styles/theme.scss" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    font-family: $font-family;
+    background-color: $color-background;
+    padding: $spacing-lg;
+    border: 1px solid $color-secondary;
+    border-radius: 8px;
+}
+
+select, textarea {
+    font-family: inherit;
+    padding: $spacing-md;
+    border: 1px solid $color-primary;
+    border-radius: 4px;
+    font-size: $font-size-base;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
