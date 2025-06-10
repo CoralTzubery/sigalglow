@@ -5,6 +5,7 @@ import { ReviewForm } from "../components/ReviewForm";
 
 import styles from "./Reviews.module.scss";
 import { jwtDecode } from "jwt-decode";
+import { StarRating } from "../components/StarRating";
 
 type TokenPayload = {
     sub: string;
@@ -86,7 +87,7 @@ export function Reviews() {
                     <li key={r._id} className={styles.reviewCard}>
                         <p><strong>{r.clientName}</strong></p>
                         <p>{r.content}</p>
-                        <p>{r.rating}/5</p>
+                        <StarRating rating={r.rating} />
                         {isAdmin && (
                             <button className={styles.deleteButton} onClick={()=> handleDelete(r._id)}>
                                 מחקי

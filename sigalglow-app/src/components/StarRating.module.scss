@@ -1,0 +1,15 @@
+@use "../styles/theme.scss" as *;
+
+.stars {
+    direction: ltr;
+    font-size: $font-size-xl;
+    margin-top: $spacing-sm;
+}
+
+.filled {
+    color: $color-accent;
+}
+
+.empty {
+    color: #ddd;
+}
