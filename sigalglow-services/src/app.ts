@@ -3,6 +3,7 @@ import cors from "cors";
 import { useAuth } from "./auth";
 import { router as aboutRouter}  from "./routers/about.route";
 import { router as appointmentRouter } from "./routers/appointment.route";
+import { router as reviewRouter } from "./routers/review.route";
 
 export const app = express();
 
@@ -24,3 +25,4 @@ useAuth(app);
 
 app.use("/api/about", aboutRouter);
 app.use("/api/appointments", appointmentRouter);
+app.use("api/reviews", reviewRouter);
