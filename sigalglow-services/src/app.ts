@@ -25,4 +25,4 @@ useAuth(app);
 
 app.use("/api/about", aboutRouter);
 app.use("/api/appointments", appointmentRouter);
-app.use("api/reviews", reviewRouter);
+app.use("/api/reviews", reviewRouter);
