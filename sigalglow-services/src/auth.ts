@@ -15,8 +15,8 @@ export function useAuth(app: Application) {
     // );
 }
 
-function createToken(userId: string, userName: string) {
-    return jwt.sign({ sub: userId, userName }, process.env.SESSION_SECRET!, { expiresIn: 60*10 });
+function createToken(userId: string, userName: string, role: "admin" | "client") {
+    return jwt.sign({ sub: userId, userName, role }, process.env.SESSION_SECRET!, { expiresIn: 60*10 });
 }
 
 const register: RequestHandler = async (req, res) => {
@@ -34,7 +34,7 @@ const register: RequestHandler = async (req, res) => {
         }
 
         const newUser = await User.create({ email, password, fullName, phoneNumber, role: "client" });
-        res.json({ token: createToken(newUser.id, newUser.fullName) });
+        res.json({ token: createToken(newUser.id, newUser.fullName, newUser.role) });
     } catch (error) {
         console.error("Register error:", error);
         res.status(500).end();
@@ -57,7 +57,7 @@ const login: RequestHandler = async (req, res) => {
             return;
         }
 
-        res.json({token: createToken(user.id, user.fullName)});
+        res.json({token: createToken(user.id, user.fullName, user.role)});
     } catch (error) {
         console.error("Login error:", error);
         res.status(500).end();

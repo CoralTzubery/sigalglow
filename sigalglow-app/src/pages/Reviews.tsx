@@ -36,12 +36,16 @@ export function Reviews() {
     function checkUserRole() {
         const token = getToken();
         
-        if (!token) return;
+        if (!token) {
+            console.log("No token was found");
+            return;
+        } 
 
         try {
             const payload = jwtDecode<TokenPayload>(token);
             setIsAdmin(payload.role === "admin");
-        } catch {
+        } catch (error) {
+            console.log("Error decoding token:", error)
             setIsAdmin(false); 
         }
     }
