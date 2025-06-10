@@ -37,3 +37,18 @@
     font-weight: bold;
     margin-top: $spacing-md;
 }
+
+.deleteButton {
+    background-color: $color-secondary;
+    color: white;
+    border: none;
+    padding: $spacing-sm $spacing-md;
+    margin-top: $spacing-sm;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}
