@@ -1,0 +1,39 @@
+@use "../styles/theme.scss" as *;
+
+.container {
+    background-color: $color-background;
+    color: $color-text;
+    padding: $spacing-lg;
+    font-family: $font-family;
+    min-height: 100vh;
+}
+
+.reviewList {
+    list-style: none;
+    padding: 0;
+    margin-top: $spacing-lg;
+    display: grid;
+    gap: $spacing-md;
+}
+
+.reviewCard {
+    background-color: $color-primary;
+    padding: $spacing-md;
+    border-radius: 8px;
+    color: white;
+
+    p {
+        margin-bottom: $spacing-sm;
+
+        strong {
+            font-size: $font-size-lg;
+            color: $color-background;
+        }
+    }
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: $spacing-md;
+}

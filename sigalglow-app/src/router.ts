@@ -10,6 +10,7 @@ import { ErrorPage } from "./pages/ErrorPage";
 import { Register } from "./pages/Register";
 import { Login } from "./pages/Login";
 import { Appointments } from "./pages/Appointments";
+import { Reviews } from "./pages/Reviews";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
           if (!response.ok) throw new Error("Cannot load appointments");
           return await response.json();
         },
+      },
+      {
+        path: "reviews",
+        Component: Reviews,
       },
       {
         path: "*",

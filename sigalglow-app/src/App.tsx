@@ -27,6 +27,7 @@ export function Nav() {
         <li><Link to="/contact">יצירת קשר</Link></li>
         <li><Link to="/treatments">טיפולים</Link></li>
         <li><Link to="/appointments">תורים</Link></li>
+        <li><Link to="/reviews">ביקורות</Link></li>
         {!isLoggedIn ? (
           <>
             <li><Link to="/login">התחברות</Link></li>
