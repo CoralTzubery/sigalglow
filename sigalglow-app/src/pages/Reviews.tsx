@@ -17,6 +17,8 @@ export function Reviews() {
     const [reviews, setReviews] = useState<Review[]>([]);
     const [error, setError] = useState("");
     const [isAdmin, setIsAdmin] = useState(false);
+    const [ratingFilter, setRatingFilter] = useState<number | null>(null);
+    const filterReviews = ratingFilter ? reviews.filter((r) => r.rating === ratingFilter): reviews;
 
     useEffect(() => {
         loadReviews();
@@ -67,8 +69,20 @@ export function Reviews() {
             <h1>ביקורות</h1>
             <ReviewForm onSuccess={loadReviews} />
             {error && <p className={styles.error}>{error}</p>}
+            <label className={styles.filterLabel} htmlFor="filter">סינון לפי דירוג:</label>
+            <select className={styles.ratingFilter}
+                name="filer" 
+                id="filter" 
+                value={ratingFilter ?? ""}
+                onChange={(e) => setRatingFilter(e.target.value ? parseInt(e.target.value): null)}
+            >
+                <option value="">הצג את הכל</option>
+                {[5, 4, 3, 2, 1].map((n) => (
+                    <option key={n} value={n}>{n}/5</option>
+                ))}
+            </select>
             <ul className={styles.reviewList}>
-                {reviews.map((r) => (
+                {filterReviews.map((r) => (
                     <li key={r._id} className={styles.reviewCard}>
                         <p><strong>{r.clientName}</strong></p>
                         <p>{r.content}</p>

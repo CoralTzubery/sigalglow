@@ -31,7 +31,7 @@ export function ReviewForm({ onSuccess }: { onSuccess: () => void }) {
             <Input name="clientName" id="clientName" label="שם מלא" required />
             <Input name="content" id="content" label="תוכן הביקורת" required />
             <label htmlFor="rating">(1-5) דירוג</label>
-            <select name="rating" id="rating" required>
+            <select className={styles.select} name="rating" id="rating" required>
                 <option value="">בחרי דירוג</option>
                 {[1, 2, 3, 4, 5].map((n) => (
                     <option key={n} value={n}>{n}</option>

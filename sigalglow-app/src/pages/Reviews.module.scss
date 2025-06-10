@@ -52,3 +52,30 @@
         background-color: $color-secondary;
     }
 }
+
+.filterLabel {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    color: $color-text;
+    margin-bottom: $spacing-sm;
+    display: block;
+    padding: $spacing-sm;
+}
+
+.ratingFilter {
+    font-family: $font-family;
+    font-size: $font-size-base;
+    padding: $spacing-sm;
+    border: 1px solid $color-secondary;
+    border-radius: 4px;
+    background-color: white;
+    color: $color-text;
+    margin-bottom: $spacing-md;
+    cursor: pointer;
+    
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+        box-shadow: 0 0 0 2px rgba(210, 164, 164, 0.3);
+    }
+}
