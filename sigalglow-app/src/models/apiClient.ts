@@ -6,7 +6,7 @@ fetch(`${BASE_URL}/api/about`);
 export const tokenKeyName = "token";
 
 export const apiClient = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: BASE_URL,
 });
 
 apiClient.interceptors.request.use((config) => {
