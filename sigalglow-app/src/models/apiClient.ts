@@ -1,5 +1,8 @@
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_API_BASE;
+fetch(`${BASE_URL}/api/appointments`);
+
 export const tokenKeyName = "token";
 
 export const apiClient = axios.create({
