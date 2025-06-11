@@ -12,6 +12,8 @@ import { Login } from "./pages/Login";
 import { Appointments } from "./pages/Appointments";
 import { Reviews } from "./pages/Reviews";
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -23,7 +25,7 @@ export const router = createBrowserRouter([
         Component: Home,
         loader: async () => {
           const hero = getHero();
-          const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/about`);
+          const response = await fetch(`${BASE_URL}/api/about`);
           if (!response.ok) throw new Error("Cannot load data");
           const about = await response.json();
           return { hero, about };
@@ -53,7 +55,7 @@ export const router = createBrowserRouter([
         path: "appointments",
         Component: Appointments,
         loader: async () => {
-          const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/appointments`);
+          const response = await fetch(`${BASE_URL}/api/appointments`);
           if (!response.ok) throw new Error("Cannot load appointments");
           return await response.json();
         },
