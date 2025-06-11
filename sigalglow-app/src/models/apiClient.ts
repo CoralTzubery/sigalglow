@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_BASE;
-fetch(`${BASE_URL}/api/appointments`);
+const BASE_URL = "https://sigalglow.onrender.com";
+fetch(`${BASE_URL}/api/about`);
 
 export const tokenKeyName = "token";
 
