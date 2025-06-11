@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { Contact } from "../models/contact.model";
+import { Request, Response } from "express";
 
 export const router = Router();
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
     try {
         const { fullName, email, phone, subject, message } = req.body;
 

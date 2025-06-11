@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { About } from "../models/about.model";
+import { Request, Response } from "express";
 
 export const router = Router();
 
-router.get("/", async (_req, res) => {
+router.get("/", async (_req: Request, res: Response) => {
     try {
         const sections = await About.find();
         res.json(sections);
@@ -13,7 +14,7 @@ router.get("/", async (_req, res) => {
     }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
     try {
         const { id, title, content } = req.body;
         const section = await About.create({ id, title, content }); 

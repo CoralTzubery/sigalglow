@@ -1,9 +1,10 @@
 import { Router } from "express";
 import { Appointment } from "../models/appointment.model";
+import { Request, Response } from "express";
 
 export const router = Router();
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
     try {
         const { clientName, phoneNumber, date, time, treatmentId } = req.body;
 
@@ -27,7 +28,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-router.get("/", async (_, res) => {
+router.get("/", async (_, res: Response) => {
     try {
         const appointments = await Appointment.find();
         res.json(appointments);
@@ -37,7 +38,7 @@ router.get("/", async (_, res) => {
     }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req: Request, res: Response) => {
     try {
         const appointment = await Appointment.findById(req.params.id);
 
@@ -53,7 +54,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", async (req: Request, res: Response) => {
     try {
         const updated = await Appointment.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -72,7 +73,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req: Request, res: Response) => {
     try {
         const deleted = await Appointment.findByIdAndDelete(req.params.id);
 
