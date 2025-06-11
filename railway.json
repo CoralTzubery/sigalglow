@@ -1,0 +1,9 @@
+{
+    "build": {
+        "root": "sigalglow-services",
+        "buildCommand": "npm run build"
+    },
+    "deploy": {
+        "stratCommand": "npm start"
+    }
+}
